@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Source\SodaMachine\SodaMachine.csproj" />
+    <ProjectReference Include="..\..\Source\SodaMachineLib\SodaMachineLib.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "Sour
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{D397B500-435D-453B-B3E2-86365408A3A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SodaMachine", "Source\SodaMachine\SodaMachine.csproj", "{B5EAEDCF-1FF2-4D5D-BF60-EB9EF8DF0544}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SodaMachine", "Source\SodaMachineLib\SodaMachineLib.csproj", "{B5EAEDCF-1FF2-4D5D-BF60-EB9EF8DF0544}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{59965357-88F1-4E83-AD47-DCC74176622E}"
 EndProject
