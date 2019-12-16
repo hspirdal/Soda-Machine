@@ -5,6 +5,7 @@ namespace SodaMachineLib
 	public interface ICashRegister
 	{
 		void StoreMoney(int money);
+		int WithdrawMoney(int amountToWithdraw);
 		int RecallStoredMoney();
 		int StoredMoney { get; }
 	}
@@ -32,11 +33,12 @@ namespace SodaMachineLib
 			MaxAmountOfMoneyThatCanBeStored = maxAmountOfMoneyThatCanBeStored;
 		}
 
+		// Assumes we can only add a positive range of 1-20 at any one time (arbitrary rule of 20 being the highest coin).
 		public void StoreMoney(int money)
 		{
-			if (money < 1)
+			if (money < 1 || money > 20)
 			{
-				throw new ArgumentException("Must add positive amount of money.");
+				throw new ArgumentException("Must add positive amount of money between 1 and 20.");
 			}
 
 			if (money + StoredMoney > MaxAmountOfMoneyThatCanBeStored)
@@ -53,5 +55,16 @@ namespace SodaMachineLib
 			return returnedMoney;
 		}
 
+		public int WithdrawMoney(int amountToWithdraw)
+		{
+			if (amountToWithdraw > StoredMoney)
+			{
+				throw new ArgumentException("Cannot withdraw more money than is stored.");
+			}
+
+			StoredMoney -= amountToWithdraw;
+
+			return amountToWithdraw;
+		}
 	}
 }
