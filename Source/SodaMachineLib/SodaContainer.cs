@@ -40,7 +40,7 @@ namespace SodaMachineLib
 
 		public void Append(Soda soda)
 		{
-			var sodaType = soda.Name;
+			var sodaType = soda.Name.ToLower();
 			if (!_storedSodaMap.ContainsKey(sodaType))
 			{
 				_storedSodaMap.Add(sodaType, new Queue<Soda>());
@@ -56,6 +56,7 @@ namespace SodaMachineLib
 
 		public Soda Remove(string sodaTypeToRemove)
 		{
+			sodaTypeToRemove = sodaTypeToRemove.ToLower();
 			if (!_storedSodaMap.ContainsKey(sodaTypeToRemove))
 			{
 				throw new ArgumentException($"Soda of type {sodaTypeToRemove} is not stored.");
@@ -71,7 +72,8 @@ namespace SodaMachineLib
 
 		public int GetAmountForType(string sodaType)
 		{
-			if (!_storedSodaMap.ContainsKey(sodaType))
+			sodaType = sodaType.ToLower();
+			if (!_storedSodaMap.ContainsKey(sodaType.ToLower()))
 			{
 				return 0;
 			}
